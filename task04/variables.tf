@@ -59,3 +59,15 @@ variable "vm_password" {
   type        = string
   sensitive   = true
 }
+
+variable "allow_http_rule_name" {
+  description = "Name of the HTTP security rule"
+  type        = string
+  default     = "AllowHTTP"
+}
+
+variable "allow_ssh_rule_name" {
+  description = "Name of the SSH security rule"
+  type        = string
+  default     = "AllowSSH"
+}
