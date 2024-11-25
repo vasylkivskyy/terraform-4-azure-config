@@ -128,7 +128,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
       "sudo systemctl start nginx",
       "sudo systemctl enable nginx",
       "sudo ufw allow 'Nginx HTTP'",
-      "echo 'Nginx is running' | sudo tee /var/www/html/index.html"
+      "echo '<html><body><h1>Welcome to nginx!</h1></body></html>' | sudo tee /var/www/html/index.html"
     ]
 
     connection {
