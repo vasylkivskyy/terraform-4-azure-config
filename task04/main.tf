@@ -125,6 +125,10 @@ resource "azurerm_linux_virtual_machine" "vm" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get install -y nginx",
+      "sudo systemctl start nginx",
+      "sudo systemctl enable nginx",
+      "sudo ufw allow 'Nginx HTTP'",
+      "echo 'Nginx is running' | sudo tee /var/www/html/index.html"
     ]
 
     connection {
