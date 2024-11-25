@@ -54,6 +54,11 @@ variable "vm_sku" {
   type        = string
 }
 
+variable "ip_configuration" {
+  description = "SKU of the virtual machine"
+  type        = string
+}
+
 variable "vm_password" {
   description = "Admin password for the virtual machine"
   type        = string
