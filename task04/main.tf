@@ -101,7 +101,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   resource_group_name = data.azurerm_resource_group.existing.name
   location            = data.azurerm_resource_group.existing.location
   size                = var.vm_sku
-  admin_username      = "adminuser"
+  admin_username      = var.vm_user
   admin_password      = var.vm_password
   network_interface_ids = [
     azurerm_network_interface.nic.id,
@@ -128,7 +128,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
     connection {
       type     = "ssh"
-      user     = "adminuser"
+      user     = var.vm_user
       password = var.vm_password
       host     = azurerm_public_ip.pip.ip_address
     }

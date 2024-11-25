@@ -9,6 +9,11 @@ variable "creator_email" {
   type        = string
 }
 
+variable "vm_user" {
+  description = "Vm user"
+  type        = string
+}
+
 variable "vnet_name" {
   description = "Name of the VNet"
   type        = string
